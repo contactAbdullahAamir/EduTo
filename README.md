@@ -2,7 +2,7 @@ Project Name :EduTo
 
 Project Desciption: This will be an online learning platforom like clone of eduko website.
 
-Project Techonologies: Mern Stack or flutter 
+Project Techonologies: php,html,css and javascript and database will be sql
 
 Developer Name:Muqaddas Nazeer
 
