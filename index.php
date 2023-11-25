@@ -101,60 +101,142 @@ function showSlides() {
 
 
 <style>
-.course-image {
+  .course-image {
     width: 100%;
-    height: 170px !important;
+    height: 220px; /* Adjust the height as needed */
     object-fit: cover;
-    object-position: center;
+  }
+
+  .card {
+    position: relative;
+    height: 100%;
+  }
+
+  .card-body {
+    text-align: center;
+    height: 100%;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  .instructor {
+    font-weight: 400;
+    font-size: 16px;
+    font-family: 'Roboto', 'sans-serif';
+  }
+
+  p {
+    color: #747373;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .btn-md {
+    padding: 0.7rem 1.6rem;
+    font-size: 0.7rem;
+  }
+
+  .waves-effect,
+  .waves-light {
+    display: inline-block;
+    border-radius: 0.125rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    white-space: normal;
+    word-wrap: break-word;
+    color: inherit;
+  }
+
+  .waves-effect {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-tap-highlight-color: transparent;
 }
+
+<style>
+  .waves-effect {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .btn {
+    text-align: center;
+    vertical-align: middle;
+    background-color: transparent;
+    line-height: 1.5;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    margin: 0.375rem;
+    border: 0;
+    border-radius: 0.125rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    white-space: normal;
+    word-wrap: break-word;
+    color: inherit;
+  }
+
+  .btn.btn-md {
+    padding: 0.7rem 1.6rem;
+    font-size: 0.7rem;
+  }
+
+  a.waves-effect, a.waves-light {
+    display: inline-block;
+  }
 </style>
-<!-- Cources   -->
-<section class="py-5 bg-light">
-    <div class="text-center mb-5">
-        <h2 class="font-weight-bold" style="color:#3F51B5">Our Courses</h2>
-        <!-- <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus perspiciatis obcaecati facilis nulla</p> -->
-    </div>
 
-    <div class="container">
-        <div class="row">
-            <?php
 
-            for($i=0; $i<8; $i++){
 
-            ?>
-           
-            <div class="col-lg-3 mb-4">
-                <div class="card">
-                    <div>
-                        <img src="./courceimage.jpg" alt="" class="img-fluid rounded-top">
-                    </div>
-                    <div class="card-body">
-                        <b style="font: size 18px">Artifical Intelligance</b>
-                        <p class="card-text" style="font: size 10px;">
-                            <b>This course introduces representations, techniques, and architectures used to build
-                                applied...</b>
-                            <br>Price: 4000/-Rs</br>
+<!-- Our Courses -->
+<section class="py-5 ">
+  <div class="text-center mb-5">
+    <h2 class="font-weight-bold">Our Courses</h2>
+  </div>
 
-                        </p>
-                        <button class="btn btn-block btn-primary btn-sm">Enroll Now</button>
-
-                    </div>
-
-                </div>
+  <div class="container">
+    <div class="row">
+      <?php 
+      $query = mysqli_query($db_conn, "SELECT * FROM courses ORDER BY id DESC LIMIT 0, 8");
+      while ($course = mysqli_fetch_object($query)) {?>
+        <div class="col-lg-4 mb-4">
+          <div class="card">
+            <div>
+              <img src="./dist/uploads/<?php echo $course->image ?>" alt="" class="img-fluid rounded-top course-image">
             </div>
-            <?php } ?>
-
-            
-            
-            
-
-            
+            <div class="card-body">
+              <h4><?php echo $course->name ?></h4>
+              <p class="instructor"><?php echo $course->instructor ?></p>
+              <p class="instructor"><?php echo $course->session ?></p>
+              <p class="card-text">
+                <b></b> <?php echo $course->description ?> <br>
+              </p>
+              <a href="#" class="btn btn-md waves-effect waves-light">Read More</a>
+            </div>
+          </div>
         </div>
+      <?php } ?>
     </div>
+  </div>
 </section>
 
+
+
+
+
+
+
+
+
 <!-- Teachers -->
-<section class="py-5 ">
+<section class="py-5 bg-light">
     <div class="text-center mb-5">
         <h2 class="font-weight-bold" style= "color:#3F51B5;font: size 30px;">Our Teachers</h2>
       
