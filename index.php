@@ -1,73 +1,176 @@
+<?php
+include 'Includes/dbcon.php';
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EDUTO</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="CSS/style.css">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="img/logo/logo.png" rel="icon">
+    <title>EduTo</title>
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/ruang-admin.min.css" rel="stylesheet">
+
 </head>
 
-<body class="gradient-custom">
+<body class="bg-gradient-login" style="background-image: url('img/logo/loral1.jpe00g');">
+    <!-- Login Content -->
+    <div class="container-login">
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-12 col-md-9">
+                <div class="card shadow-sm my-5">
+                    <div class="card-body p-0">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="login-form">
+                                    <div class="d-flex justify-content-center">
+                                        <a class="navbar-brand mx-4" href="./index.php"
+                                            style="font-size: 36px; display: inline-block; font-weight: 600; margin-bottom: 10px; color: #3f51b5; margin-top:10px">EDUTO</a>
+                                    </div>
 
-    <!-- Login Section -->
-    <div class="container py-5 h-100 form">
-        <div class="row justify-content-center align-items-center h-100">
-            <div class="col-12 col-lg-9 col-xl-7">
-                <div class="card card-registration">
-                    <div class="card-body"
-                        style="background-color: #FFFFFF; border-radius: 15px; width: -webkit-fill-available; font-size: 14px;">
-                        <!-- Card body content goes here -->
-                        <div class="d-flex justify-content-center">
-                            <a class="navbar-brand mx-4" href="/"
-                                style="font-size: 36px; display: inline-block; font-weight: bolder; margin-bottom: 10px; color: #3f51b5; margin-top:20px">EDUKO</a>
-                        </div>
-                        <h3 class="text-center mb-4" style="font-weight: 400; font-size: 20px; color: black;">Login to
-                            Your Account</h3>
+                                    <h3 class="text-center mb-4"
+                                        style="font-weight: 500; font-size: 20px; color: black;">Login to
+                                        Your Account</h3>
+                                    <form class="user" method="Post" action="">
 
-                            <form id="form" novalidate="novalidate" class="form" action="login.php">
-                            <!-- Your login form fields go here -->
-                            <div class="mb-3">
-                                <input type="email" class="form-control form-control-lg" id="email" name="email"
-                                    placeholder="Email" style="font-size: 16px; margin-top: 50px;">
-                            </div>
-                            <div class="mb-3">
-                                <input type="password" class="form-control form-control-lg" id="password"
-                                    name="password" placeholder="Password" style="font-size: 16px; ; margin-top: 20px;">
-                            </div>
-                            <div class="mb-3">
-                                <input class="form-control form-control-lg" id="role" name="role" placeholder="Role"
-                                    style="font-size: 16px; ; margin-top: 20px;">
-                            </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" required name="username"
+                                                id="exampleInputEmail" placeholder="Enter Email Address">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" name="password" required class="form-control"
+                                                id="exampleInputPassword" placeholder="Enter Password">
+                                        </div>
+                                        <div class="form-group">
+                                            <select required name="userType" class="form-control mb-3">
+                                                <option value="">--Select User Roles--</option>
+                                                <option value="Administrator">Admin</option>
+                                                <option value="ClassTeacher">Teacher</option>
+                                                <option value="Student">Student</option>
+                                            </select>
+                                        </div>
+                                        <div class="text-center mt-3" style="margin-bottom:30px">
+                                            <a href="#"
+                                                style="font-weight: bolder; text-decoration: none; color: #3f51b5; margin-top: 50px;">Forgot
+                                                your password?</a>
+                                            <p style="font-size: 14px; color: black; margin-top: 5px;">If your email is
+                                                not
+                                                confirmed,
+                                                <a href="#" style="color: black;">click here</a> to resend email.
+                                            </p>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="custom-control custom-checkbox small"
+                                                style="line-height: 1.5rem;">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck">
 
-                            <div class="text-center mt-3" style="margin-bottom:50px">
-                                <a href="#"
-                                    style="font-weight: bolder; text-decoration: none; color: #3f51b5; margin-top: 50px;">Forgot
-                                    your password?</a>
-                                <p style="font-size: 14px; color: black; margin-top: 5px;">If your email is not
-                                    confirmed,
-                                    <a href="#" style="color: black;">click here</a> to resend email.
-                                </p>
-                            </div>
-                            <div
-                                style="display: flex; justify-content: space-between; align-items: center; margin-top: 25px;">
-                                <a href="register.php"
-                                    style="font-weight: bolder; text-decoration: none; color: #3f51b5;">Create
-                                    Account</a>
-                                <div class="submit">
-                                <button type="button" value="Login" class="btn btn-primary btn-md waves-effect waves-light button" style="background-color: #3f51b5; margin-bottom:30px">Login</button>
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            style="display: flex; justify-content: space-between; align-items: center;">
+                                            <a href="register.php"
+                                                style="font-weight: bolder; text-decoration: none; color: #3f51b5;">
+                                            </a>
+
+                                            <div class="form-group">
+                                                <input type="submit" class="btn btn-success btn-block" value="Login"
+                                                    name="login" style="background-color: #3f51b5; " />
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                    <?php
+
+                                    if (isset($_POST['login'])) {
+
+                                        $userType = $_POST['userType'];
+                                        $username = $_POST['username'];
+                                        $password = $_POST['password'];
+                                        $password = md5($password);
+
+                                        if ($userType == "Administrator") {
+
+                                            $query = "SELECT * FROM tbladmin WHERE emailAddress = '$username' AND password = '$password'";
+                                            $rs = $conn->query($query);
+                                            $num = $rs->num_rows;
+                                            $rows = $rs->fetch_assoc();
+
+                                            if ($num > 0) {
+
+                                                $_SESSION['userId'] = $rows['Id'];
+                                                $_SESSION['firstName'] = $rows['firstName'];
+                                                $_SESSION['lastName'] = $rows['lastName'];
+                                                $_SESSION['emailAddress'] = $rows['emailAddress'];
+
+                                                echo "<script type = \"text/javascript\">
+                                                window.location = (\"Admin/index.php\")
+                                                </script>";
+                                            } else {
+
+                                                echo "<div class='alert alert-danger' role='alert'>
+                                                    Invalid Username/Password!
+                                                    </div>";
+
+                                            }
+                                        } else if ($userType == "ClassTeacher") {
+
+                                            $query = "SELECT * FROM tblclassteacher WHERE emailAddress = '$username' AND password = '$password'";
+                                            $rs = $conn->query($query);
+                                            $num = $rs->num_rows;
+                                            $rows = $rs->fetch_assoc();
+
+                                            if ($num > 0) {
+
+                                                $_SESSION['userId'] = $rows['Id'];
+                                                $_SESSION['firstName'] = $rows['firstName'];
+                                                $_SESSION['lastName'] = $rows['lastName'];
+                                                $_SESSION['emailAddress'] = $rows['emailAddress'];
+                                                $_SESSION['classId'] = $rows['classId'];
+                                                $_SESSION['classArmId'] = $rows['classArmId'];
+
+                                                echo "<script type = \"text/javascript\">
+                                                window.location = (\"ClassTeacher/index.php\")
+                                                </script>";
+                                            } else {
+
+                                                echo "<div class='alert alert-danger' role='alert'>
+                                                Invalid Username/Password!
+                                                 </div>";
+
+                                            }
+                                        } else {
+
+                                            echo "<div class='alert alert-danger' role='alert'>
+                                             Invalid Username/Password!
+                                              </div>";
+
+                                        }
+                                    }
+                                    ?>
+                                    <div class="text-center">
+                                    </div>
                                 </div>
                             </div>
-
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="./login.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Login Content -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="js/ruang-admin.min.js"></script>
 </body>
 
 </html>
