@@ -147,6 +147,32 @@ session_start();
                                                  </div>";
 
                                             }
+                                        }else if ($userType == "Student") {
+
+                                            $query = "SELECT * FROM tblstudents WHERE otherName = '$username' AND password = '$password'";
+                                            $rs = $conn->query($query);
+                                            $num = $rs->num_rows;
+                                            $rows = $rs->fetch_assoc();
+
+                                            if ($num > 0) {
+
+                                                $_SESSION['userId'] = $rows['Id'];
+                                                $_SESSION['firstName'] = $rows['firstName'];
+                                                $_SESSION['lastName'] = $rows['lastName'];
+                                                $_SESSION['otherName'] = $rows['otherName'];
+                                                $_SESSION['classId'] = $rows['classId'];
+                                                $_SESSION['classArmId'] = $rows['classArmId'];
+
+                                                echo "<script type = \"text/javascript\">
+                                                window.location = (\"Student/index.php\")
+                                                </script>";
+                                            } else {
+
+                                                echo "<div class='alert alert-danger' role='alert'>
+                                                Invalid Username/Password!
+                                                 </div>";
+
+                                            }
                                         } else {
 
                                             echo "<div class='alert alert-danger' role='alert'>

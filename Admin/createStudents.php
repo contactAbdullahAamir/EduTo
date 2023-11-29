@@ -11,7 +11,8 @@ if(isset($_POST['save'])){
     $firstName=$_POST['firstName'];
   $lastName=$_POST['lastName'];
   $otherName=$_POST['otherName'];
-
+  $sampPass = "123";
+  $sampPass_2 = md5($sampPass);
   $admissionNumber=$_POST['admissionNumber'];
   $classId=$_POST['classId'];
   $classArmId=$_POST['classArmId'];
@@ -27,7 +28,7 @@ if(isset($_POST['save'])){
     else{
 
     $query=mysqli_query($conn,"insert into tblstudents(firstName,lastName,otherName,admissionNumber,password,classId,classArmId,dateCreated) 
-    value('$firstName','$lastName','$otherName','$admissionNumber','12345','$classId','$classArmId','$dateCreated')");
+    value('$firstName','$lastName','$otherName','$admissionNumber','$sampPass_2','$classId','$classArmId','$dateCreated')");
 
     if ($query) {
         

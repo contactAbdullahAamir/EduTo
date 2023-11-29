@@ -20,7 +20,7 @@ if(isset($_POST['save'])){
     $query=mysqli_query($conn,"select * from tblclassteacher where emailAddress ='$emailAddress'");
     $ret=mysqli_fetch_array($query);
 
-    $sampPass = "pass123";
+    $sampPass = "123";
     $sampPass_2 = md5($sampPass);
 
     if($ret > 0){ 
