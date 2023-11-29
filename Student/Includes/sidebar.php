@@ -3,13 +3,14 @@
         <div class="sidebar-brand-icon" >
           <!-- <img src="../img/logo/logo.png"> -->
         </div>
-        <div class="sidebar-brand-text mx-3" style="font: size 60px;">EduTo</div>
+        
+        <div class="sidebar-brand-text mx-3" style="font: size 60px;">EduTo  Home</div>
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item active">
         <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Teacher-Dashboard</span></a>
+          <span>Student-Dashboard</span></a>
       </li> 
       <hr class="sidebar-divider">
       <div class="sidebar-heading">

@@ -164,7 +164,7 @@ session_start();
                                                 $_SESSION['classArmId'] = $rows['classArmId'];
 
                                                 echo "<script type = \"text/javascript\">
-                                                window.location = (\"Student/index.php\")
+                                                window.location = (\"Student/viewCources.php\")
                                                 </script>";
                                             } else {
 
