@@ -97,11 +97,11 @@ if (isset($_GET['Id']) && isset($_GET['action']) && $_GET['action'] == "delete")
   $query = mysqli_query($conn, "UPDATE tblcource SET active = 0 WHERE Id = '$Id'");
 
   if ($query == TRUE) {
-      echo "<script type='text/javascript'>
+    echo "<script type='text/javascript'>
           window.location = ('addCource.php')
           </script>";
   } else {
-      $statusMsg = "<div class='alert alert-danger' style='margin-right:700px;'>An error occurred: " . mysqli_error($conn) . "</div>";
+    $statusMsg = "<div class='alert alert-danger' style='margin-right:700px;'>An error occurred: " . mysqli_error($conn) . "</div>";
   }
 }
 

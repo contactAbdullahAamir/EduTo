@@ -30,7 +30,7 @@
           </div>
         </div>
       </li>
-      <hr class="sidebar-divider">
+      
       <div class="sidebar-heading">
       Attendance
       </div>
@@ -54,7 +54,6 @@
 
      <!--  -->
 
-     <hr class="sidebar-divider">
       <div class="sidebar-heading">
       Cource Management
       </div>
@@ -70,6 +69,31 @@
             <h6 class="collapse-header">Manage Cource Content</h6>
             <a class="collapse-item" href="addCource.php">Cource</a>
            
+          </div>
+        </div>
+      </li>
+
+
+      <!-- cource Content -->
+
+     
+      <div class="sidebar-heading">
+      Cource Content Management
+      </div>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrapcon"
+          aria-expanded="true" aria-controls="collapseBootstrapcon">
+          <i class="fa fa-calendar-alt"></i>
+          <span>Manage Cource Content</span>
+        </a>
+        <div id="collapseBootstrapcon" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Manage Cource Content</h6>
+            <a class="collapse-item" href="courceContent.php">Cource Content</a>
+            <a class="collapse-item" href="announcment.php">Announcmenmt</a>
+            <a class="collapse-item" href="assignment.php">Assignment</a>
+
           </div>
         </div>
       </li>

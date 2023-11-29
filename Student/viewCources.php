@@ -259,7 +259,7 @@ $registrationNumber = $registrationNumberRow['admissionNumber'];
                 <p class="card-text">
                   ' . $rows['description'] . '
                 </p>
-                <a href="#" class="btn btn-md waves-effect waves-light">Read More</a>
+                <a href="./index.php" class="btn btn-md waves-effect waves-light">Read More</a>
               </div>
             </div>
           </div>';

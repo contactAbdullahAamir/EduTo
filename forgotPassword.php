@@ -1,4 +1,4 @@
-<?php 
+<?php
 include 'Includes/dbcon.php';
 session_start();
 ?>
@@ -13,8 +13,8 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="img/logo/attnlg.jpg" rel="icon">
-    <title>Code Camp BD - Forget Password</title>
+    <link href="img/logo/logo.png" rel="icon">
+    <title>Eduto</title>
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/ruang-admin.min.css" rel="stylesheet">
@@ -38,39 +38,32 @@ session_start();
                                     </div>
                                     <form class="user" method="Post" action="">
                                         <div class="form-group">
-                                            <input type="email" class="form-control" required name="email" id="exampleInputEmail" placeholder="Enter Email Address">
+                                            <input type="email" class="form-control" required name="email"
+                                                id="exampleInputEmail" placeholder="Enter Email Address">
                                         </div>
                                         <div class="form-group">
-                                            <div class="custom-control custom-checkbox small" style="line-height: 1.5rem;">
+                                            <div class="custom-control custom-checkbox small"
+                                                style="line-height: 1.5rem;">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <!-- <label class="custom-control-label" for="customCheck">Remember
-                          Me</label> -->
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <input type="submit" class="btn btn-primary btn-block" value="Submit" name="submit" />
+                                            <input type="submit" class="btn btn-primary btn-block" value="Submit"
+                                                name="submit" />
                                         </div>
                                     </form>
 
                                     <?php
 
-              if(isset($_POST['submit'])){
-					
-                     
-				}
-			?>
-
-                                    <!-- <hr>
-                    <a href="index.html" class="btn btn-google btn-block">
-                      <i class="fab fa-google fa-fw"></i> Login with Google
-                    </a>
-                    <a href="index.html" class="btn btn-facebook btn-block">
-                      <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                    </a> -->
+                                    if (isset($_POST['submit'])) {
+                                    }
+                                    ?>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="font-weight-bold small" href="memberSetup.php">Create a Memeber Account!</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <a class="font-weight-bold small" href="organizationSetup.php">Setup Cooperative Account!</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a class="font-weight-bold small" href="memberSetup.php">Create a Memeber
+                                            Account!</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a class="font-weight-bold small" href="organizationSetup.php">Setup Cooperative
+                                            Account!</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <a class="font-weight-bold small" href="forgotPassword.php">Forgot Password?</a>
 
                                     </div>
