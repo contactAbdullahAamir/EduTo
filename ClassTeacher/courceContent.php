@@ -13,7 +13,7 @@ if (isset($_POST['saveContent'])) {
   $active = 1; // Assuming active status is set to 1 for new content
   $updatedAt = date("Y-m-d H:i:s");
   // File upload handling
-  $target_dir = "../img";
+  $target_dir = "../img/";
   $target_file = $target_dir . basename($_FILES["file"]["name"]);
   $fileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
   $uploadOk = 1;
@@ -146,7 +146,7 @@ if (isset($_POST['saveContent'])) {
                             <th>Course Name</th>
                             <th>Title</th>
                             <th>Description</th>
-                            <th>Created At</th>
+                            <th>Uploaded At</th>
                             <th>File</th>
                           </tr>
                         </thead>
@@ -194,7 +194,7 @@ if (isset($_POST['saveContent'])) {
         <!---Container Fluid-->
       </div>
       <!-- Footer -->
-      <?php include "Includes/footer.php"; ?>
+      <?php  ?>
       <!-- Footer -->
     </div>
   </div>

@@ -14,13 +14,13 @@ if (isset($_GET['id'])) {
     } else {
         // Handle the case where the course with the specified ID is not found
         // Redirect or display an error message, as needed
-        header("Location: index.php");
+        echo "Error: Course not found.";
         exit();
     }
 } else {
     // Handle the case where no course ID is provided in the URL
     // Redirect or display an error message, as needed
-    header("Location: index.php");
+    echo "Error: No course ID provided.";
     exit();
 }
 ?>
@@ -41,54 +41,34 @@ if (isset($_GET['id'])) {
 </head>
 
 <body id="page-top">
-    <div id="wrapper">
+<div id="wrapper">
         <?php include "Includes/sidebar.php";?>
         <!-- Sidebar -->
         <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
                 <?php include "Includes/topbar.php";?>
-                
-                <!-- Display the course details -->
-                <section class="py-5">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <h2 class="font-weight-bold" style="margin-top:-30px"><?php echo $courseRow['name']; ?></h2>
-                                <h3 style="margin-top:30px">Cource description:</h3>
-                                <p class="card-text"><?php echo $courseRow['description']; ?></p>
-                                <h5>COURSE LEARNING OUTCOMES</h5><br>
-                                <h5>TEXT BOOKS</h5>
-                                <!-- Include additional details or actions as needed -->
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Include your footer and other common elements -->
-               
+      
+    <!-- Display the course details -->
+    <section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="font-weight-bold" style="margin-top: -30px;"><?php echo $courseRow['name']; ?></h2>
+                  <img src="../img/instructor.jpg" alt="Instructor Image" style="max-width: 150px; border-radius: 50%; margin-top: 15px; margin-left: 20px;">
+                  <h3 style="margin-top: 30px; ">Course Instructor</h3>
+                <p class="instructor" style="font-weight: bold; font-size: 16px; margin-left: 15px;"><?php echo $courseRow['instructor']; ?></p>
+              
+                <!-- Include additional details or actions as needed -->
             </div>
         </div>
     </div>
-
-    <!-- Scroll to top -->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
+</section>
+    </div>
+    </div>
 
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="js/ruang-admin.min.js"></script>
-    <!-- Page level plugins -->
-    <script src="../vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="../vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script>
-        $(document).ready(function () {
-            $('#dataTable').DataTable(); // ID From dataTable 
-            $('#dataTableHover').DataTable(); // ID From dataTable with Hover
-        });
-    </script>
 </body>
 </html>

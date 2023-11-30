@@ -128,8 +128,7 @@ if (isset($_POST['addAnnouncement'])) {
                                                 <th>Course Name</th>
                                                 <th>Title</th>
                                                 <th>Announcement</th>
-                                                <th>Created At</th>
-                                                <th>Updated At</th>
+                                                <th>Announced Date</th>
                                             </tr>
                                         </thead>
 
@@ -150,7 +149,7 @@ if (isset($_POST['addAnnouncement'])) {
                                                         <td>" . $announcementRow['Title'] . "</td>
                                                         <td>" . $announcementRow['announcment'] . "</td>
                                                         <td>" . $announcementRow['createdAt'] . "</td>
-                                                        <td>" . $announcementRow['updateAt'] . "</td>
+                                                       
                                                     </tr>";
                                                     $sn++;
                                                 }
@@ -171,7 +170,7 @@ if (isset($_POST['addAnnouncement'])) {
                 <!---Container Fluid-->
             </div>
             <!-- Footer -->
-            <?php include "Includes/footer.php"; ?>
+            <?php  ?>
             <!-- Footer -->
         </div>
     </div>

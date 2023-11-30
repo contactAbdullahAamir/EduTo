@@ -259,7 +259,7 @@ $registrationNumber = $registrationNumberRow['admissionNumber'];
                 <p class="card-text">
                   ' . $rows['description'] . '
                 </p>
-                <a href="./index.php" class="btn btn-md waves-effect waves-light">Read More</a>
+                <a href="./index.php?id=' . $rows['id'] . '" class="btn btn-md waves-effect waves-light">Read More</a>
               </div>
             </div>
           </div>';
@@ -281,25 +281,67 @@ $registrationNumber = $registrationNumberRow['admissionNumber'];
 
           <div class="container">
             <div class="row">
-              <?php for ($i = 0; $i < 6; $i++) { ?>
+             
                 <div class="col-lg-4 my-5">
                   <div class="card">
                     <div class="col-5 position-absolute" style="top:-50px">
                       <img src="../img/teacher.jpg" alt="" class="mw-100 border rounded-circle">
                     </div>
                     <div class="card-body pt-5 mt-4">
-                      <h5 class="card-title mb-0">Teacher's Name</h5>
+                      <h5 class="card-title mb-0">Laeeq Khan Niazi</h5>
                       <p><i class="fa fa-star text-warning"></i> <i class="fa fa-star text-warning"></i> <i
                           class="fa fa-star text-warning"></i> <i class="fa fa-star text-warning"></i> <i
                           class="fa fa-star text-warning"></i></p>
                       <p class="card-text">
-                        <!-- <b>Courses: </b> 5 <br> -->
-                        <b>Ratings: </b>
+                        <b>Courses: Software Engineering</b> <br>
+                        <!-- <b>Ratings: </b> -->
                       </p>
                     </div>
                   </div>
+                  
                 </div>
-              <?php } ?>
+
+                <div class="col-lg-4 my-5">
+                  <div class="card">
+                    <div class="col-5 position-absolute" style="top:-50px">
+                      <img src="../img/teacher.jpg" alt="" class="mw-100 border rounded-circle">
+                    </div>
+                    <div class="card-body pt-5 mt-4">
+                      <h5 class="card-title mb-0">Nazeef Ul Haq</h5>
+                      <p><i class="fa fa-star text-warning"></i> <i class="fa fa-star text-warning"></i> <i
+                          class="fa fa-star text-warning"></i> <i class="fa fa-star text-warning"></i> <i
+                          class="fa fa-star text-warning"></i></p>
+                      <p class="card-text">
+                        <b>Courses: Database</b>  <br>
+                        <!-- <b>Ratings: </b> -->
+                      </p>
+                    </div>
+                  </div>
+                  
+                </div>
+
+
+                <div class="col-lg-4 my-5">
+                  <div class="card">
+                    <div class="col-5 position-absolute" style="top:-50px">
+                      <img src="../img/teacher.jpg" alt="" class="mw-100 border rounded-circle">
+                    </div>
+                    <div class="card-body pt-5 mt-4">
+                      <h5 class="card-title mb-0">Sumyan Wala</h5>
+                      <p><i class="fa fa-star text-warning"></i> <i class="fa fa-star text-warning"></i> <i
+                          class="fa fa-star text-warning"></i> <i class="fa fa-star text-warning"></i> <i
+                          class="fa fa-star text-warning"></i></p>
+                      <p class="card-text">
+                        <b>Courses: Database</b> <br>
+                        <!-- <b>Ratings: </b> -->
+                      </p>
+                    </div>
+                  </div>
+                  
+                </div>
+              
+              
+              
             </div>
           </div>
         </section>

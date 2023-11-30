@@ -1,6 +1,6 @@
-<footer class="sticky-footer bg-white">
-<section class="py-2 text-light" style="background-color: #3F51B5; text-align: center">
-          <div class="container-fluid">
+
+<section class="py-2 text-light" style="background-color: #3F51B5; text-align: center; margin-top: 20px;">
+          
             <div class="social-icons">
               <div>
                 <span class="fa-stack">
@@ -27,6 +27,11 @@
             </div>
           </div>
         </section>
+        <section class="py-2  text-light" style="background-color:#334191;text-align:center">
+          <div class="container-fluid">
+            @2023 Copyright All Rights Reseved. <a href="#" class="text-light"></a>
+          </div>
+        </section>
         
         <!-- <div class="container my-auto">
           <div class="copyright text-center my-auto">
@@ -35,4 +40,4 @@
             </span>
           </div>
         </div> -->
-      </footer>
+      
