@@ -39,7 +39,6 @@ if (isset($_POST['save'])) {
       // File uploaded successfully, proceed with database insertion
       $query = mysqli_query($conn, "SELECT * FROM tblcource WHERE name ='$courseName'");
       $ret = mysqli_fetch_array($query);
-
       if ($ret > 0) {
         $statusMsg = "<div class='alert alert-danger' style='margin-right:700px;'>This Course Name Already Exists!</div>";
       } else {
@@ -61,7 +60,6 @@ if (isset($_POST['save'])) {
 //---------------------------------------EDIT-------------------------------------------------------------
 if (isset($_GET['Id']) && isset($_GET['action']) && $_GET['action'] == "edit") {
   $Id = $_GET['Id'];
-
   $query = mysqli_query($conn, "select * from tblcourses where Id ='$Id'");
   $row = mysqli_fetch_array($query);
 
@@ -93,9 +91,7 @@ if (isset($_GET['Id']) && isset($_GET['action']) && $_GET['action'] == "edit") {
 
 if (isset($_GET['Id']) && isset($_GET['action']) && $_GET['action'] == "delete") {
   $Id = $_GET['Id'];
-
   $query = mysqli_query($conn, "UPDATE tblcource SET active = 0 WHERE Id = '$Id'");
-
   if ($query == TRUE) {
     echo "<script type='text/javascript'>
           window.location = ('addCource.php')
@@ -222,8 +218,6 @@ if (isset($_GET['Id']) && isset($_GET['action']) && $_GET['action'] == "delete")
                             <th>Description</th>
                             <th>Thumbnail</th>
                             <th>Updated At</th>
-                            <!-- <th>Edit</th> -->
-                            <!-- <th>Delete</th> -->
                           </tr>
                         </thead>
 
@@ -238,37 +232,30 @@ if (isset($_GET['Id']) && isset($_GET['action']) && $_GET['action'] == "delete")
                             while ($rows = $rs->fetch_assoc()) {
                               $sn = $sn + 1;
                               echo "
-                <tr>
-                    <td>" . $sn . "</td>
-                    <td>" . $rows['name'] . "</td>
-                    <td>" . $rows['instructor'] . "</td>
-                    <td>" . $rows['session'] . "</td>
-                    <td>" . $rows['description'] . "</td>
-                    <td><img src='" . $rows['image'] . "' alt='thumbnail' style='max-width: 50px; max-height: 50px;'></td>
-                    <td>" . $rows['updatedAt'] . "</td>
-                   </tr>";
-                            }
+                                <tr>
+                                    <td>" . $sn . "</td>
+                                    <td>" . $rows['name'] . "</td>
+                                    <td>" . $rows['instructor'] . "</td>
+                                    <td>" . $rows['session'] . "</td>
+                                    <td>" . $rows['description'] . "</td>
+                                    <td><img src='" . $rows['image'] . "' alt='thumbnail' style='max-width: 50px; max-height: 50px;'></td>
+                                    <td>" . $rows['updatedAt'] . "</td>
+                                  </tr>";
+                                            }
                           } else {
                             echo "<div class='alert alert-danger' role='alert'>No Record Found!</div>";
                           }
                           ?>
                         </tbody>
-
                       </table>
                     </div>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
-
         </div>
-        <!---Container Fluid-->
       </div>
-      <!-- Footer -->
-      <?php include "Includes/footer.php"; ?>
-      <!-- Footer -->
     </div>
   </div>
 
@@ -293,5 +280,4 @@ if (isset($_GET['Id']) && isset($_GET['action']) && $_GET['action'] == "delete")
     });
   </script>
 </body>
-
 </html>

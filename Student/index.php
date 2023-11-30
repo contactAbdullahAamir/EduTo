@@ -58,14 +58,10 @@ if (isset($_GET['id'])) {
                                 <p class="card-text"><?php echo $courseRow['description']; ?></p>
                                 <h5>COURSE LEARNING OUTCOMES</h5><br>
                                 <h5>TEXT BOOKS</h5>
-                                <!-- Include additional details or actions as needed -->
                             </div>
                         </div>
                     </div>
-                </section>
-
-                <!-- Include your footer and other common elements -->
-               
+                </section>  
             </div>
         </div>
     </div>

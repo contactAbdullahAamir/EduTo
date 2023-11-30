@@ -60,10 +60,6 @@ include '../Includes/session.php';
                         <label class="form-control-label">Select Date<span class="text-danger ml-2">*</span></label>
                             <input type="date" class="form-control" name="dateTaken" id="exampleInputFirstName" placeholder="Class Arm Name">
                         </div>
-                        <!-- <div class="col-xl-6">
-                        <label class="form-control-label">Class Arm Name<span class="text-danger ml-2">*</span></label>
-                      <input type="text" class="form-control" name="classArmName" value="<?php echo $row['classArmName'];?>" id="exampleInputFirstName" placeholder="Class Arm Name">
-                        </div> -->
                     </div>
                     <button type="submit" name="view" class="btn btn-primary">View Attendance</button>
                   </form>
@@ -88,8 +84,6 @@ include '../Includes/session.php';
                         <th>Admission No</th>
                         <th>Session</th>
                         <th>Section</th>
-                        <!-- <th>Session</th> -->
-                        <!-- <th>Term</th> -->
                         <th>Status</th>
                         <th>Date</th>
                       </tr>
@@ -132,8 +126,6 @@ include '../Includes/session.php';
                                 <td>".$rows['admissionNumber']."</td>
                                 <td>".$rows['className']."</td>
                                 <td>".$rows['classArmName']."</td>
-                              
-                             
                                 <td style='background-color:".$colour."'>".$status."</td>
                                 <td>".$rows['dateTimeTaken']."</td>
                               </tr>";
@@ -155,19 +147,6 @@ include '../Includes/session.php';
             </div>
             </div>
           </div>
-          <!--Row-->
-
-          <!-- Documentation Link -->
-          <!-- <div class="row">
-            <div class="col-lg-12 text-center">
-              <p>For more documentations you can visit<a href="https://getbootstrap.com/docs/4.3/components/forms/"
-                  target="_blank">
-                  bootstrap forms documentations.</a> and <a
-                  href="https://getbootstrap.com/docs/4.3/components/input-group/" target="_blank">bootstrap input
-                  groups documentations</a></p>
-            </div>
-          </div> -->
-
         </div>
         <!---Container Fluid-->
       </div>

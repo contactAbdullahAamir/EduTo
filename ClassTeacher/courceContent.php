@@ -171,31 +171,24 @@ if (isset($_POST['saveContent'])) {
                                   <a href='" . $rows['file'] . "' target='_blank'>" . basename($rows['file']) . "</a>
                               </td>
                           </tr>";
-                          
 
-                                      }
+
+                            }
                           } else {
                             echo "<div class='alert alert-danger' role='alert'>No Record Found!</div>";
                           }
                           ?>
                         </tbody>
 
-              </table>
+                      </table>
                     </div>
                   </div>
                 </div>
               </div>
-              <!-- End Content Display Section -->
-
             </div>
           </div>
-
         </div>
-        <!---Container Fluid-->
       </div>
-      <!-- Footer -->
-      <?php  ?>
-      <!-- Footer -->
     </div>
   </div>
 
@@ -208,8 +201,6 @@ if (isset($_POST['saveContent'])) {
   <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
   <script src="js/ruang-admin.min.js"></script>
-
-  <!-- End of the file -->
 </body>
 
 </html>

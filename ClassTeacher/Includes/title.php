@@ -1,1 +1,1 @@
-  <title>EduTo- Dashboard</title>
+  <title>EduTo</title>

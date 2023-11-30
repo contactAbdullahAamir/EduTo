@@ -87,8 +87,6 @@ if (isset($_GET['id'])) {
                         </div>
                     </div>
                 </section>
-
-                <!-- Include your footer and other common elements -->
             </div>
         </div>
     </div>

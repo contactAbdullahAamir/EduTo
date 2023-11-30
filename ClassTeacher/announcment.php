@@ -7,7 +7,7 @@ include '../Includes/session.php';
 
 $statusMsg = ''; // Variable to store status messages
 
-// Check if the form is submitted
+
 // Check if the form is submitted
 if (isset($_POST['addAnnouncement'])) {
     $courceName = $_POST['courceName'];
@@ -18,8 +18,6 @@ if (isset($_POST['addAnnouncement'])) {
     $active = 1; // Assuming active status is set to 1 for new announcements
 
     // File upload handling
-    // (If you have any file handling, you can add it here)
-
     // Insert announcement into the database
     $query = mysqli_query($conn, "INSERT INTO announcment (courceName, Title, announcment, createdAt, updateAt, active) 
                 VALUES ('$courceName', '$title', '$announcement', '$createdAt', '$updatedAt', '$active')");
@@ -74,7 +72,8 @@ if (isset($_POST['addAnnouncement'])) {
                         <div class="col-lg-12">
                             <!-- Form Basic -->
                             <div class="card mb-4">
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Add Announcement</h6>
                                     <?php echo $statusMsg; ?>
                                 </div>
@@ -97,27 +96,28 @@ if (isset($_POST['addAnnouncement'])) {
                                             <div class="col-xl-6">
                                                 <label class="form-control-label">Title<span
                                                         class="text-danger ml-2">*</span></label>
-                                                <input type="text" class="form-control" name="title" required placeholder="Announcement Title">
+                                                <input type="text" class="form-control" name="title" required
+                                                    placeholder="Announcement Title">
                                             </div>
                                         </div>
                                         <div class="form-group row mb-3">
                                             <div class="col-xl-12">
                                                 <label class="form-control-label">Announcement<span
                                                         class="text-danger ml-2">*</span></label>
-                                                <textarea class="form-control" name="announcement" rows="3" placeholder="Announcement Details"
-                                                    required></textarea>
+                                                <textarea class="form-control" name="announcement" rows="3"
+                                                    placeholder="Announcement Details" required></textarea>
                                             </div>
                                         </div>
-                                        <button type="submit" name="addAnnouncement"
-                                            class="btn btn-primary">Add Announcement</button>
+                                        <button type="submit" name="addAnnouncement" class="btn btn-primary">Add
+                                            Announcement</button>
                                     </form>
                                 </div>
                             </div>
 
                             <!-- Announcement Display Section -->
-                            
                             <div class="card mb-4">
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Announcements</h6>
                                 </div>
                                 <div class="table-responsive p-3">
@@ -133,16 +133,16 @@ if (isset($_POST['addAnnouncement'])) {
                                         </thead>
 
                                         <tbody>
-                                        <?php
-                          $query = "SELECT * FROM announcment WHERE active = 1";
-                          $rs = $conn->query($query);
-                          $num = $rs->num_rows;
-                          $sn = 0;
-                          $status = "";
-                          if ($num > 0) {
-                            while ($announcementRow = $rs->fetch_assoc()) {
-                              $sn = $sn + 1;
-                              
+                                            <?php
+                                            $query = "SELECT * FROM announcment WHERE active = 1";
+                                            $rs = $conn->query($query);
+                                            $num = $rs->num_rows;
+                                            $sn = 0;
+                                            $status = "";
+                                            if ($num > 0) {
+                                                while ($announcementRow = $rs->fetch_assoc()) {
+                                                    $sn = $sn + 1;
+
                                                     echo "<tr>
                                                         <td>" . $sn . "</td>
                                                         <td>" . $announcementRow['courceName'] . "</td>
@@ -161,17 +161,10 @@ if (isset($_POST['addAnnouncement'])) {
                                     </table>
                                 </div>
                             </div>
-                            <!-- End Announcement Display Section -->
-
                         </div>
                     </div>
-
                 </div>
-                <!---Container Fluid-->
             </div>
-            <!-- Footer -->
-            <?php  ?>
-            <!-- Footer -->
         </div>
     </div>
 

@@ -10,7 +10,6 @@ if(isset($_POST['save'])){
     
     $classId=$_POST['classId'];
     $classArmName=$_POST['classArmName'];
-   
     $query=mysqli_query($conn,"select * from tblclassarms where classArmName ='$classArmName' and classId = '$classId'");
     $ret=mysqli_fetch_array($query);
 
@@ -32,8 +31,6 @@ if(isset($_POST['save'])){
     }
   }
 }
-
-//---------------------------------------EDIT-------------------------------------------------------------
 
 
 
@@ -126,7 +123,7 @@ if(isset($_POST['save'])){
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Create <Section></Section></h1>
+            <h1 class="h3 mb-0 text-gray-800">Create Section<Section></Section></h1>
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="./">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Create Section</li>
@@ -235,8 +232,7 @@ if(isset($_POST['save'])){
                            "<div class='alert alert-danger' role='alert'>
                             No Record Found!
                             </div>";
-                      }
-                      
+                      }       
                       ?>
                     </tbody>
                   </table>
@@ -245,19 +241,6 @@ if(isset($_POST['save'])){
             </div>
             </div>
           </div>
-          <!--Row-->
-
-          <!-- Documentation Link -->
-          <!-- <div class="row">
-            <div class="col-lg-12 text-center">
-              <p>For more documentations you can visit<a href="https://getbootstrap.com/docs/4.3/components/forms/"
-                  target="_blank">
-                  bootstrap forms documentations.</a> and <a
-                  href="https://getbootstrap.com/docs/4.3/components/input-group/" target="_blank">bootstrap input
-                  groups documentations</a></p>
-            </div>
-          </div> -->
-
         </div>
         <!---Container Fluid-->
       </div>

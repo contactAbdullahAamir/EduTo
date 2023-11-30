@@ -51,12 +51,6 @@ if(isset($_POST['save'])){
   }
 }
 
-//---------------------------------------EDIT-------------------------------------------------------------
-
-
-
-
-
 
 //--------------------EDIT------------------------------------------------------------
 
@@ -79,20 +73,19 @@ if(isset($_POST['save'])){
               $classId=$_POST['classId'];
               $classArmId=$_POST['classArmId'];
               $dateCreated = date("Y-m-d");
-
-    $query=mysqli_query($conn,"update tblclassteacher set firstName='$firstName', lastName='$lastName',
-    emailAddress='$emailAddress', password='$password',phoneNo='$phoneNo', classId='$classId',classArmId='$classArmId'
-    where Id='$Id'");
-            if ($query) {
-                
-                echo "<script type = \"text/javascript\">
-                window.location = (\"createClassTeacher.php\")
-                </script>"; 
-            }
-            else
-            {
-                $statusMsg = "<div class='alert alert-danger' style='margin-right:700px;'>An error Occurred!</div>";
-            }
+              $query=mysqli_query($conn,"update tblclassteacher set firstName='$firstName', lastName='$lastName',
+              emailAddress='$emailAddress', password='$password',phoneNo='$phoneNo', classId='$classId',classArmId='$classArmId'
+              where Id='$Id'");
+                if ($query) {
+                    
+                    echo "<script type = \"text/javascript\">
+                    window.location = (\"createClassTeacher.php\")
+                    </script>"; 
+                }
+                else
+                {
+                    $statusMsg = "<div class='alert alert-danger' style='margin-right:700px;'>An error Occurred!</div>";
+                }
         }
     }
 
@@ -140,12 +133,10 @@ if(isset($_POST['save'])){
   <meta name="description" content="">
   <meta name="author" content="">
   <link href="img/logo/attnlg.jpg" rel="icon">
-<?php include 'includes/title.php';?>
+  <?php include 'includes/title.php';?>
   <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="css/ruang-admin.min.css" rel="stylesheet">
-
-
 
    <script>
     function classArmDropdown(str) {
@@ -334,18 +325,6 @@ if(isset($_POST['save'])){
             </div>
             </div>
           </div>
-          <!--Row-->
-
-          <!-- Documentation Link -->
-          <!-- <div class="row">
-            <div class="col-lg-12 text-center">
-              <p>For more documentations you can visit<a href="https://getbootstrap.com/docs/4.3/components/forms/"
-                  target="_blank">
-                  bootstrap forms documentations.</a> and <a
-                  href="https://getbootstrap.com/docs/4.3/components/input-group/" target="_blank">bootstrap input
-                  groups documentations</a></p>
-            </div>
-          </div> -->
 
         </div>
         <!---Container Fluid-->
